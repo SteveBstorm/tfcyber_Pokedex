@@ -1,0 +1,27 @@
+<div *ngIf="pokedex" class="content">
+  <fieldset>
+    <legend>Pokelist
+      <button (click)="previous()" *ngIf="pokedex.previous">Previous</button> &nbsp;
+      <button (click)="next()" *ngIf="pokedex.next">Next</button>
+    </legend>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom du pokémon</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(pokemon of pokedex.results; track $index){
+          <tr>
+            <td>{{pokemon.name}}</td>
+            <td><button (click)="selectPokemon(pokemon.url)">Détails</button></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </fieldset>
+  <div class="detail" *ngIf="selectedPokemon">
+    <app-pokedetail  [url]="selectedPokemon"></app-pokedetail>
+  </div>
+</div>

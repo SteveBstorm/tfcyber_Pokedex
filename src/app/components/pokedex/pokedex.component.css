@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  gap : 30px;
+  justify-content: space-around;
+}
+
+fieldset {
+  min-width: 40%;
+}
+.detail {
+  min-width: 40%;
+}

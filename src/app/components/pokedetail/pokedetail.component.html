@@ -1,0 +1,10 @@
+@if(pokemon){
+  <h3>Détail de : {{pokemon.name}}</h3>
+  <div>
+    <img [src]="pokemon.sprites.front_default">
+    <img [src]="pokemon.sprites.other['official-artwork'].front_default" height="100px">
+    <img [src]="pokemon.sprites.back_default">
+  </div>
+  <p>Poids : {{pokemon.weight}}</p>
+  <p>Taille : {{pokemon.height}}</p>
+}
